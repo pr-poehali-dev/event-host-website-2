@@ -277,7 +277,7 @@ export default function Index() {
           <FadeSection delay={0.3}>
             <div className="mt-16 border border-gold/15 p-8 flex flex-wrap items-center gap-4 justify-center">
               <span className="text-xs tracking-[0.3em] uppercase text-champagne/30 mr-2">Провела мероприятия</span>
-              {["Свадьбы", "Юбилеи", "Выпускные 2025", "Корпоративы", "Дни рождения", "Тематические вечеринки", "Детские праздники"].map((tag) => (
+              {["Свадьбы", "Юбилеи", "Выпускные 2025", "Корпоративы", "Дни рождения", "Тематические вечеринки"].map((tag) => (
                 <span key={tag} className="px-4 py-1.5 border border-gold/25 text-xs tracking-widest uppercase text-gold/70 hover:border-gold hover:text-gold transition-all duration-300">
                   {tag}
                 </span>
