@@ -49,10 +49,10 @@ const services = [
 ];
 
 const portfolio = [
-  { year: "2024", title: "Золотая свадьба", guests: "80 гостей", desc: "Торжественная церемония и вечер в ресторане Сарова, живая музыка, выездная регистрация" },
-  { year: "2024", title: "Корпоратив Новый год", guests: "120 гостей", desc: "Тематический вечер, интерактивные игры, авторский сценарий" },
-  { year: "2023", title: "Юбилей 50 лет", guests: "60 гостей", desc: "Тёплый семейный вечер с авторской программой и живым выступлением" },
-  { year: "2023", title: "Выпускной бал", guests: "200 гостей", desc: "Торжественный вечер, вальс, шоу-программа, дискотека" },
+  { img: "https://cdn.poehali.dev/files/ebc5dd5f-5e89-40b7-92d4-c0f4ca3556b4.jpg", title: "Вечер с бенгальскими огнями", tag: "Свадьба" },
+  { img: "https://cdn.poehali.dev/files/714363f7-e2b4-430a-bbd5-4cdc8469ef12.jpg", title: "Первый танец", tag: "Свадьба" },
+  { img: "https://cdn.poehali.dev/files/5f36502d-b77a-4c60-b21d-1d20ef7595c8.jpg", title: "У храма", tag: "Свадьба" },
+  { img: "https://cdn.poehali.dev/files/a1f260cf-d770-4938-a95b-d7dc75803794.jpg", title: "Живые эмоции", tag: "Праздник" },
 ];
 
 const testimonials = [
@@ -261,21 +261,21 @@ export default function Index() {
             <GoldDivider />
           </FadeSection>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {portfolio.map((p, i) => (
-              <FadeSection key={p.title} delay={i * 0.15}>
-                <div className="border border-gold/20 p-8 hover:border-gold/50 transition-all duration-500 group relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-0 bg-gold group-hover:h-full transition-all duration-500" />
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-xs tracking-widest text-gold/60 uppercase">{p.year}</span>
-                    <span className="text-xs text-champagne/30 tracking-widest">{p.guests}</span>
+              <FadeSection key={p.title} delay={i * 0.1} className={i === 0 ? "col-span-2 row-span-2" : ""}>
+                <div className="group relative overflow-hidden cursor-pointer h-full" style={{ minHeight: i === 0 ? "480px" : "230px" }}>
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
+                    <div className="text-xs tracking-widest uppercase text-gold mb-1">{p.tag}</div>
+                    <div className="font-cormorant text-xl text-champagne">{p.title}</div>
                   </div>
-                  <h3 className="font-cormorant text-3xl text-champagne mb-3 group-hover:text-gold transition-colors duration-300">{p.title}</h3>
-                  <p className="text-champagne/50 text-sm">{p.desc}</p>
-                  <div className="mt-6 flex items-center gap-2 text-gold/50 group-hover:text-gold transition-colors duration-300">
-                    <span className="text-xs tracking-widest uppercase">Подробнее</span>
-                    <Icon name="ArrowRight" size={14} />
-                  </div>
+                  <div className="absolute top-3 right-3 w-6 h-6 border-t border-r border-gold/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                 </div>
               </FadeSection>
             ))}
