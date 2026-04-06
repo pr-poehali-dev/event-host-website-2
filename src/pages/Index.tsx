@@ -442,9 +442,7 @@ export default function Index() {
               ВКонтакте
             </a>
           </div>
-          <div className="text-xs text-champagne/20 tracking-widest">
-            © 2025 · Наталья Алексашкина · Саров
-          </div>
+          <div className="text-xs text-champagne/20 tracking-widest">© 2026 · Наталья Алексашкина · Саров</div>
         </div>
       </footer>
 
