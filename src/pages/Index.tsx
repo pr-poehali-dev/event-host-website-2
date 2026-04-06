@@ -37,7 +37,7 @@ const FadeSection = ({ children, delay = 0, className = "" }: { children: React.
   );
 };
 
-const PHOTO_PROFILE = "https://sun1-21.userapi.com/s/v1/ig2/6YC4LSIX7nCtYyzNI9AGqIBruShKjwRhWhtgkt9XMcXXilNX_rOq9lcMAu7lEuSoIhDrsobBBLG4iUquiitt2he5.jpg?quality=95&crop=298,389,873,873&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=400x400";
+const PHOTO_PROFILE = "https://cdn.poehali.dev/files/1bbbea25-66bd-4359-b6fb-26891f77db98.jpg";
 
 const services = [
   { icon: "Heart", title: "Свадьбы", desc: "Проведу ваш главный день легко и незабываемо — от торжественной церемонии до последнего танца. Авторский сценарий, живые эмоции, полный контроль тайминга." },
