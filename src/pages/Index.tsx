@@ -311,8 +311,7 @@ export default function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
-                    <div className="text-xs tracking-widest uppercase text-gold mb-1">{p.tag}</div>
-                    <div className="font-cormorant text-xl text-champagne">{p.title}</div>
+                    <div className="text-xs tracking-widest uppercase text-gold">{p.tag}</div>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-12 h-12 border border-gold/60 flex items-center justify-center bg-obsidian/40 backdrop-blur-sm">
