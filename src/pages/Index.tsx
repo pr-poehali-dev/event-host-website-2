@@ -380,70 +380,53 @@ export default function Index() {
 
       {/* CONTACT */}
       <section id="contact" className="py-32 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <FadeSection className="text-center mb-16">
-            <div className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Начнём?</div>
+            <div className="text-xs tracking-[0.4em] uppercase text-gold mb-4">Обсудим ваш праздник?</div>
             <h2 className="font-cormorant text-5xl md:text-6xl font-light text-champagne">Связаться</h2>
             <GoldDivider />
             <p className="text-champagne/50 mt-6 text-sm leading-relaxed max-w-md mx-auto">
-              Расскажите о вашем мероприятии — я свяжусь с вами в течение 24 часов для обсуждения деталей
+              Напишите или позвоните — и мы вместе придумаем праздник, который запомнится на всю жизнь
             </p>
           </FadeSection>
 
           <FadeSection delay={0.2}>
-            <div className="border border-gold/20 p-10 md:p-14">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="text-xs tracking-widest uppercase text-gold/70 block mb-2">Ваше имя</label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={e => setFormData({...formData, name: e.target.value})}
-                    placeholder="Елена Смирнова"
-                    className="w-full bg-transparent border-b border-gold/30 pb-3 text-champagne placeholder-champagne/20 text-sm focus:outline-none focus:border-gold transition-colors duration-300 tracking-wide"
-                  />
+            <div className="grid md:grid-cols-2 gap-6">
+
+              {/* Телефон */}
+              <a
+                href="tel:+79875411912"
+                className="group border border-gold/20 p-10 flex flex-col items-center text-center hover:border-gold/60 hover:bg-charcoal/50 transition-all duration-500"
+              >
+                <div className="w-16 h-16 border border-gold/30 flex items-center justify-center mb-6 group-hover:border-gold group-hover:bg-gold/5 transition-all duration-300">
+                  <Icon name="Phone" size={24} className="text-gold" />
                 </div>
-                <div>
-                  <label className="text-xs tracking-widest uppercase text-gold/70 block mb-2">Телефон</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={e => setFormData({...formData, phone: e.target.value})}
-                    placeholder="+7 (999) 000-00-00"
-                    className="w-full bg-transparent border-b border-gold/30 pb-3 text-champagne placeholder-champagne/20 text-sm focus:outline-none focus:border-gold transition-colors duration-300 tracking-wide"
-                  />
+                <div className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-3">Позвонить</div>
+                <div className="font-cormorant text-2xl text-champagne group-hover:text-gold transition-colors duration-300 mb-2">
+                  +7 (987) 541-19-12
                 </div>
-              </div>
-              <div className="mb-6">
-                <label className="text-xs tracking-widest uppercase text-gold/70 block mb-2">Тип мероприятия</label>
-                <input
-                  type="text"
-                  value={formData.event}
-                  onChange={e => setFormData({...formData, event: e.target.value})}
-                  placeholder="Свадьба, корпоратив, юбилей..."
-                  className="w-full bg-transparent border-b border-gold/30 pb-3 text-champagne placeholder-champagne/20 text-sm focus:outline-none focus:border-gold transition-colors duration-300 tracking-wide"
-                />
-              </div>
-              <div className="mb-10">
-                <label className="text-xs tracking-widest uppercase text-gold/70 block mb-2">Расскажите подробнее</label>
-                <textarea
-                  rows={4}
-                  value={formData.message}
-                  onChange={e => setFormData({...formData, message: e.target.value})}
-                  placeholder="Дата, место, количество гостей, пожелания..."
-                  className="w-full bg-transparent border-b border-gold/30 pb-3 text-champagne placeholder-champagne/20 text-sm focus:outline-none focus:border-gold transition-colors duration-300 resize-none tracking-wide"
-                />
-              </div>
-              <div className="flex flex-col sm:flex-row gap-6 items-center">
-                <button className="w-full sm:w-auto px-14 py-4 bg-gold text-obsidian text-xs tracking-[0.3em] uppercase font-montserrat font-medium hover:bg-gold-light transition-all duration-300 hover:scale-105">
-                  Отправить заявку
-                </button>
-                <div className="flex gap-6 text-champagne/30">
-                  <a href="#" className="hover:text-gold transition-colors duration-300 text-xs tracking-widest uppercase">Instagram</a>
-                  <a href="#" className="hover:text-gold transition-colors duration-300 text-xs tracking-widest uppercase">Telegram</a>
-                  <a href="#" className="hover:text-gold transition-colors duration-300 text-xs tracking-widest uppercase">WhatsApp</a>
+                <div className="text-champagne/30 text-xs tracking-wide">Отвечу в любое удобное время</div>
+                <div className="mt-6 w-8 h-px bg-gold/30 group-hover:w-16 group-hover:bg-gold transition-all duration-500 mx-auto" />
+              </a>
+
+              {/* ВКонтакте */}
+              <a
+                href="https://vk.com/id45732270"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-gold/20 p-10 flex flex-col items-center text-center hover:border-gold/60 hover:bg-charcoal/50 transition-all duration-500"
+              >
+                <div className="w-16 h-16 border border-gold/30 flex items-center justify-center mb-6 group-hover:border-gold group-hover:bg-gold/5 transition-all duration-300">
+                  <Icon name="MessageCircle" size={24} className="text-gold" />
                 </div>
-              </div>
+                <div className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-3">Написать</div>
+                <div className="font-cormorant text-2xl text-champagne group-hover:text-gold transition-colors duration-300 mb-2">
+                  ВКонтакте
+                </div>
+                <div className="text-champagne/30 text-xs tracking-wide">Напишите — отвечу быстро</div>
+                <div className="mt-6 w-8 h-px bg-gold/30 group-hover:w-16 group-hover:bg-gold transition-all duration-500 mx-auto" />
+              </a>
+
             </div>
           </FadeSection>
         </div>
