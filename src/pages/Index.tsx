@@ -324,24 +324,46 @@ export default function Index() {
             <GoldDivider />
           </FadeSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <FadeSection key={t.name} delay={i * 0.15}>
-                <div className="p-8 border border-gold/15 hover:border-gold/40 transition-all duration-500 relative">
-                  <div className="font-cormorant text-6xl text-gold/20 absolute top-4 left-6 leading-none">"</div>
-                  <p className="text-champagne/70 text-sm leading-relaxed mb-8 pt-6 italic font-cormorant text-base">
-                    {t.text}
-                  </p>
-                  <div className="border-t border-gold/20 pt-4">
-                    <div className="font-montserrat text-sm font-medium text-champagne">{t.name}</div>
-                    <div className="text-gold text-xs tracking-widest uppercase mt-1">{t.event}</div>
+          <div className="flex flex-col gap-8">
+            {/* Первый отзыв — на всю ширину */}
+            <FadeSection delay={0}>
+              <div className="p-8 md:p-12 border border-gold/15 hover:border-gold/40 transition-all duration-500 relative">
+                <div className="font-cormorant text-6xl text-gold/20 absolute top-4 left-6 leading-none">"</div>
+                <p className="text-champagne/70 leading-relaxed mb-8 pt-6 italic font-cormorant text-lg md:text-xl">
+                  {testimonials[0].text}
+                </p>
+                <div className="border-t border-gold/20 pt-4 flex items-center justify-between flex-wrap gap-4">
+                  <div>
+                    <div className="font-montserrat text-sm font-medium text-champagne">{testimonials[0].name}</div>
+                    <div className="text-gold text-xs tracking-widest uppercase mt-1">{testimonials[0].event}</div>
                   </div>
-                  <div className="flex gap-1 mt-3">
-                    {[1,2,3,4,5].map(s => <span key={s} className="text-gold text-xs">★</span>)}
+                  <div className="flex gap-1">
+                    {[1,2,3,4,5].map(s => <span key={s} className="text-gold text-sm">★</span>)}
                   </div>
                 </div>
-              </FadeSection>
-            ))}
+              </div>
+            </FadeSection>
+
+            {/* Остальные отзывы — в сетке */}
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.slice(1).map((t, i) => (
+                <FadeSection key={t.name} delay={(i + 1) * 0.15}>
+                  <div className="p-8 border border-gold/15 hover:border-gold/40 transition-all duration-500 relative">
+                    <div className="font-cormorant text-6xl text-gold/20 absolute top-4 left-6 leading-none">"</div>
+                    <p className="text-champagne/70 leading-relaxed mb-8 pt-6 italic font-cormorant text-base">
+                      {t.text}
+                    </p>
+                    <div className="border-t border-gold/20 pt-4">
+                      <div className="font-montserrat text-sm font-medium text-champagne">{t.name}</div>
+                      <div className="text-gold text-xs tracking-widest uppercase mt-1">{t.event}</div>
+                    </div>
+                    <div className="flex gap-1 mt-3">
+                      {[1,2,3,4,5].map(s => <span key={s} className="text-gold text-xs">★</span>)}
+                    </div>
+                  </div>
+                </FadeSection>
+              ))}
+            </div>
           </div>
         </div>
       </section>
