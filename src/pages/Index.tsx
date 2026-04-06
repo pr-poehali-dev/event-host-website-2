@@ -402,9 +402,7 @@ export default function Index() {
                   <Icon name="Phone" size={24} className="text-gold" />
                 </div>
                 <div className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-3">Позвонить</div>
-                <div className="font-cormorant text-2xl text-champagne group-hover:text-gold transition-colors duration-300 mb-2">
-                  +7 (987) 541-19-12
-                </div>
+                <div className="font-cormorant text-2xl text-champagne group-hover:text-gold transition-colors duration-300 mb-2">+7 (987) 080-7645</div>
                 <div className="text-champagne/30 text-xs tracking-wide">Отвечу в любое удобное время</div>
                 <div className="mt-6 w-8 h-px bg-gold/30 group-hover:w-16 group-hover:bg-gold transition-all duration-500 mx-auto" />
               </a>
