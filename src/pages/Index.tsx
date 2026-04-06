@@ -434,15 +434,19 @@ export default function Index() {
 
       {/* FOOTER */}
       <footer className="border-t border-gold/10 py-10 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-cormorant text-2xl text-gold tracking-[0.2em] uppercase">Наталья</div>
+          <div className="flex gap-6 items-center">
+            <a href="tel:+79875411912" className="text-champagne/40 hover:text-gold transition-colors duration-300 text-xs tracking-widest">
+              +7 (987) 541-19-12
+            </a>
+            <span className="text-gold/20">✦</span>
+            <a href="https://vk.com/id45732270" target="_blank" rel="noopener noreferrer" className="text-champagne/40 hover:text-gold transition-colors duration-300 text-xs tracking-widest uppercase">
+              ВКонтакте
+            </a>
+          </div>
           <div className="text-xs text-champagne/20 tracking-widest">
             © 2025 · Наталья Алексашкина · Саров
-          </div>
-          <div className="flex gap-6 text-xs tracking-widest uppercase text-champagne/30">
-            <span>Тамада & Ведущая</span>
-            <span className="text-gold/30">✦</span>
-            <span>Since 2014</span>
           </div>
         </div>
       </footer>
