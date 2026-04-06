@@ -53,6 +53,7 @@ const portfolio = [
   { img: "https://cdn.poehali.dev/files/714363f7-e2b4-430a-bbd5-4cdc8469ef12.jpg", title: "Первый танец", tag: "Свадьба" },
   { img: "https://cdn.poehali.dev/files/5f36502d-b77a-4c60-b21d-1d20ef7595c8.jpg", title: "У храма", tag: "Свадьба" },
   { img: "https://cdn.poehali.dev/files/a1f260cf-d770-4938-a95b-d7dc75803794.jpg", title: "Живые эмоции", tag: "Праздник" },
+  { img: "https://cdn.poehali.dev/files/a5c9fc99-bb93-4eff-8691-2b15b12a5339.jpg", title: "Сердце двоих", tag: "Свадьба" },
 ];
 
 const testimonials = [
@@ -429,6 +430,62 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* LIGHTBOX */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center"
+          style={{ background: "rgba(0,0,0,0.95)" }}
+          onClick={closeLightbox}
+        >
+          {/* Закрыть */}
+          <button
+            className="absolute top-5 right-5 w-10 h-10 border border-gold/40 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all duration-200 z-10"
+            onClick={closeLightbox}
+          >
+            <Icon name="X" size={18} />
+          </button>
+
+          {/* Предыдущее */}
+          <button
+            className="absolute left-4 md:left-8 w-12 h-12 border border-gold/40 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all duration-200 z-10"
+            onClick={e => { e.stopPropagation(); prevPhoto(); }}
+          >
+            <Icon name="ChevronLeft" size={22} />
+          </button>
+
+          {/* Фото */}
+          <div className="px-20 max-w-5xl w-full flex flex-col items-center" onClick={e => e.stopPropagation()}>
+            <img
+              src={lightbox.img}
+              alt={lightbox.title}
+              className="max-h-[80vh] max-w-full object-contain"
+              style={{ boxShadow: "0 0 60px rgba(201,168,76,0.1)" }}
+            />
+            <div className="mt-5 text-center">
+              <div className="text-xs tracking-[0.4em] uppercase text-gold mb-1">{lightbox.tag}</div>
+              <div className="font-cormorant text-2xl text-champagne">{lightbox.title}</div>
+            </div>
+            <div className="mt-3 flex gap-2">
+              {portfolio.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setLightboxIdx(i); setLightbox(portfolio[i]); }}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${i === lightboxIdx ? "bg-gold w-4" : "bg-champagne/30"}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Следующее */}
+          <button
+            className="absolute right-4 md:right-8 w-12 h-12 border border-gold/40 flex items-center justify-center text-gold hover:border-gold hover:bg-gold/10 transition-all duration-200 z-10"
+            onClick={e => { e.stopPropagation(); nextPhoto(); }}
+          >
+            <Icon name="ChevronRight" size={22} />
+          </button>
+        </div>
+      )}
 
       <style>{`
         @keyframes fadeUp {
