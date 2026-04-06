@@ -227,9 +227,8 @@ export default function Index() {
           <FadeSection delay={0.2}>
             <div>
               <div className="text-xs tracking-[0.4em] uppercase text-gold mb-4">О Наталье</div>
-              <h2 className="font-cormorant text-5xl md:text-6xl font-light text-champagne leading-tight mb-6">
-                Тамада,<br />которая<br /><em>зажигает зал</em>
-              </h2>
+              <h2 className="font-cormorant text-5xl md:text-6xl font-light text-champagne leading-tight mb-6">Ведущая,
+которая зажигает зал.</h2>
               <GoldDivider />
               <p className="text-champagne/60 leading-relaxed mt-6 mb-4 text-sm tracking-wide">
                 Привет! Я Наталья Алексашкина — профессиональный ведущий и тамада из Сарова. Уже более 10 лет я создаю праздники, на которых гости не просто присутствуют, а живут каждым моментом.
