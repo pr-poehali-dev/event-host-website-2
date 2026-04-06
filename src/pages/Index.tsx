@@ -65,12 +65,34 @@ export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", event: "", message: "" });
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+  const [lightboxIdx, setLightboxIdx] = useState<number>(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const openLightbox = (idx: number) => {
+    setLightboxIdx(idx);
+    setLightbox(portfolio[idx]);
+    document.body.style.overflow = "hidden";
+  };
+  const closeLightbox = () => {
+    setLightbox(null);
+    document.body.style.overflow = "";
+  };
+  const prevPhoto = () => {
+    const idx = (lightboxIdx - 1 + portfolio.length) % portfolio.length;
+    setLightboxIdx(idx);
+    setLightbox(portfolio[idx]);
+  };
+  const nextPhoto = () => {
+    const idx = (lightboxIdx + 1) % portfolio.length;
+    setLightboxIdx(idx);
+    setLightbox(portfolio[idx]);
+  };
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
@@ -264,7 +286,11 @@ export default function Index() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {portfolio.map((p, i) => (
               <FadeSection key={p.title} delay={i * 0.1} className={i === 0 ? "col-span-2 row-span-2" : ""}>
-                <div className="group relative overflow-hidden cursor-pointer h-full" style={{ minHeight: i === 0 ? "480px" : "230px" }}>
+                <div
+                  className="group relative overflow-hidden cursor-pointer h-full"
+                  style={{ minHeight: i === 0 ? "480px" : "230px" }}
+                  onClick={() => openLightbox(i)}
+                >
                   <img
                     src={p.img}
                     alt={p.title}
@@ -275,7 +301,11 @@ export default function Index() {
                     <div className="text-xs tracking-widest uppercase text-gold mb-1">{p.tag}</div>
                     <div className="font-cormorant text-xl text-champagne">{p.title}</div>
                   </div>
-                  <div className="absolute top-3 right-3 w-6 h-6 border-t border-r border-gold/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-12 h-12 border border-gold/60 flex items-center justify-center bg-obsidian/40 backdrop-blur-sm">
+                      <Icon name="Expand" size={18} className="text-gold" />
+                    </div>
+                  </div>
                 </div>
               </FadeSection>
             ))}
