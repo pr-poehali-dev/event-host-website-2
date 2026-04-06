@@ -37,26 +37,28 @@ const FadeSection = ({ children, delay = 0, className = "" }: { children: React.
   );
 };
 
+const PHOTO_PROFILE = "https://sun1-21.userapi.com/s/v1/ig2/6YC4LSIX7nCtYyzNI9AGqIBruShKjwRhWhtgkt9XMcXXilNX_rOq9lcMAu7lEuSoIhDrsobBBLG4iUquiitt2he5.jpg?quality=95&crop=298,389,873,873&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=400x400";
+
 const services = [
-  { icon: "Heart", title: "Свадьбы", desc: "Организую ваш главный день с безупречным вниманием к каждой детали — от декора до тайминга." },
-  { icon: "Star", title: "Юбилеи", desc: "Создаю торжества, которые остаются в памяти на десятилетия. Камерные и масштабные форматы." },
-  { icon: "Briefcase", title: "Корпоративы", desc: "Профессиональные мероприятия для вашего бизнеса: презентации, тимбилдинг, гала-ужины." },
-  { icon: "Sparkles", title: "Частные вечеринки", desc: "Изысканные вечера в узком кругу — стиль, атмосфера и сервис премиального уровня." },
-  { icon: "Camera", title: "Фотосессии", desc: "Организую профессиональные съёмки с подбором локации, стилиста и команды." },
-  { icon: "Gift", title: "Особые случаи", desc: "Помолвки, baby shower, выпускные — любой повод превращаю в незабываемое событие." },
+  { icon: "Heart", title: "Свадьбы", desc: "Проведу ваш главный день легко и незабываемо — от торжественной церемонии до последнего танца. Авторский сценарий, живые эмоции, полный контроль тайминга." },
+  { icon: "Star", title: "Юбилеи", desc: "Создаю тёплые и яркие торжества для любого возраста. Сценарий пишется индивидуально под виновника торжества и его гостей." },
+  { icon: "Sparkles", title: "Корпоративные вечера", desc: "Профессиональное ведение корпоративов, новогодних вечеров и тимбилдинга. Объединяю коллектив через игры, конкурсы и атмосферу праздника." },
+  { icon: "Music", title: "Выпускные вечера", desc: "Запоминающийся вечер для выпускников — с торжественной частью, шоу-программой и танцами." },
+  { icon: "Users", title: "День рождения", desc: "Отмечаем ваш день рождения стильно и ярко! Любой формат: от камерного ужина до масштабного праздника." },
+  { icon: "Gift", title: "Тематические вечеринки", desc: "Гавайская, 80-е, Голливуд, Чёрно-белая — воплощу любую тему с конкурсами, костюмами и настроением." },
 ];
 
 const portfolio = [
-  { year: "2024", title: "Свадьба в Венеции", guests: "120 гостей", desc: "Канальные гондолы, флорентийский декор, живая музыка" },
-  { year: "2024", title: "Корпоратив Сбер", guests: "500 гостей", desc: "Гала-ужин в Большом Театре, авторская программа" },
-  { year: "2023", title: "Юбилей 50 лет", guests: "80 гостей", desc: "Белый зал Ritz, живой оркестр, дресс-код black tie" },
-  { year: "2023", title: "Выставка украшений", guests: "300 гостей", desc: "Частный вернисаж, cocktail reception, пресс-материалы" },
+  { year: "2024", title: "Золотая свадьба", guests: "80 гостей", desc: "Торжественная церемония и вечер в ресторане Сарова, живая музыка, выездная регистрация" },
+  { year: "2024", title: "Корпоратив Новый год", guests: "120 гостей", desc: "Тематический вечер, интерактивные игры, авторский сценарий" },
+  { year: "2023", title: "Юбилей 50 лет", guests: "60 гостей", desc: "Тёплый семейный вечер с авторской программой и живым выступлением" },
+  { year: "2023", title: "Выпускной бал", guests: "200 гостей", desc: "Торжественный вечер, вальс, шоу-программа, дискотека" },
 ];
 
 const testimonials = [
-  { name: "Анна М.", event: "Свадьба", text: "Наталья создала мечту. Каждая деталь была продумана до мелочей — мы просто наслаждались своим днём, не думая ни о чём. Профессионализм высшего класса." },
-  { name: "Дмитрий К.", event: "Корпоратив", text: "Наше мероприятие прошло безупречно. Гости до сих пор вспоминают этот вечер. Наталья — редкий специалист, который действительно слышит клиента." },
-  { name: "Елена В.", event: "Юбилей", text: "Я не ожидала, что организатор сможет так точно уловить атмосферу, которую я хотела. Это было магически красиво. Рекомендую всем без исключения." },
+  { name: "Светлана и Алексей", event: "Свадьба", text: "Наталья провела нашу свадьбу на высшем уровне! Все гости были в восторге, никто не скучал. Она умеет держать зал и создавать настоящую атмосферу праздника. Спасибо огромное!" },
+  { name: "Ирина К.", event: "Юбилей", text: "Заказывали ведущую на юбилей мамы. Наталья — профессионал своего дела. Очень внимательная, всё организовала чётко. Гости до сих пор вспоминают этот вечер с улыбкой!" },
+  { name: "Компания ТехПром", event: "Корпоратив", text: "Новогодний корпоратив прошёл великолепно. Наталья нашла подход к совершенно разным людям, всех расшевелила и объединила. Обязательно обратимся снова!" },
 ];
 
 export default function Index() {
@@ -125,27 +127,33 @@ export default function Index() {
             className="text-xs tracking-[0.5em] uppercase text-gold mb-8"
             style={{ animation: "fadeUp 0.8s ease 0.2s both" }}
           >
-            Организатор мероприятий
+            Тамада & Ведущая · Саров
           </div>
           <h1
-            className="font-cormorant text-6xl md:text-8xl lg:text-9xl font-light leading-none mb-6 text-champagne"
+            className="font-cormorant text-6xl md:text-8xl lg:text-9xl font-light leading-none mb-4 text-champagne"
             style={{ animation: "fadeUp 0.8s ease 0.4s both" }}
           >
             Наталья
           </h1>
           <div
+            className="font-cormorant text-2xl md:text-3xl text-champagne/60 italic mb-6"
+            style={{ animation: "fadeUp 0.8s ease 0.5s both" }}
+          >
+            Алексашкина
+          </div>
+          <div
             className="flex items-center justify-center gap-4 mb-8"
             style={{ animation: "fadeUp 0.8s ease 0.55s both" }}
           >
             <div className="w-20 h-px bg-gold" />
-            <span className="text-gold text-sm tracking-[0.3em] uppercase font-cormorant italic">premium events</span>
+            <span className="text-gold text-sm tracking-[0.3em] uppercase font-cormorant italic">тамада · ведущая · Саров</span>
             <div className="w-20 h-px bg-gold" />
           </div>
           <p
             className="text-champagne/60 text-lg font-light leading-relaxed max-w-xl mx-auto mb-12 tracking-wide"
             style={{ animation: "fadeUp 0.8s ease 0.7s both" }}
           >
-            Превращаю ваши мечты в незабываемые события. Свадьбы, корпоративы и частные торжества на высшем уровне.
+            Создаю атмосферу настоящего праздника. Свадьбы, юбилеи, корпоративы — каждое мероприятие с авторским сценарием и живыми эмоциями.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -176,18 +184,17 @@ export default function Index() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <FadeSection>
             <div className="relative">
-              <div className="w-full aspect-[3/4] bg-charcoal border border-gold/20 relative overflow-hidden flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mx-auto mb-6">
-                    <span className="text-5xl font-cormorant text-gold italic">Н</span>
-                  </div>
-                  <div className="text-champagne/30 text-xs tracking-widest uppercase">Ваше фото</div>
-                </div>
-                <div className="absolute top-4 left-4 w-12 h-12 border-t border-l border-gold/40" />
-                <div className="absolute bottom-4 right-4 w-12 h-12 border-b border-r border-gold/40" />
+              <div className="w-full aspect-[3/4] bg-charcoal border border-gold/20 relative overflow-hidden">
+                <img
+                  src={PHOTO_PROFILE}
+                  alt="Наталья Алексашкина"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute top-4 left-4 w-12 h-12 border-t border-l border-gold/60" />
+                <div className="absolute bottom-4 right-4 w-12 h-12 border-b border-r border-gold/60" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-charcoal border border-gold/30 p-6 text-center">
-                <div className="font-cormorant text-4xl text-gold font-light">8+</div>
+                <div className="font-cormorant text-4xl text-gold font-light">10+</div>
                 <div className="text-xs tracking-widest uppercase text-champagne/50 mt-1">лет опыта</div>
               </div>
             </div>
@@ -197,17 +204,17 @@ export default function Index() {
             <div>
               <div className="text-xs tracking-[0.4em] uppercase text-gold mb-4">О Наталье</div>
               <h2 className="font-cormorant text-5xl md:text-6xl font-light text-champagne leading-tight mb-6">
-                Искусство<br /><em>идеального</em><br />события
+                Тамада,<br />которая<br /><em>зажигает зал</em>
               </h2>
               <GoldDivider />
               <p className="text-champagne/60 leading-relaxed mt-6 mb-4 text-sm tracking-wide">
-                Я создаю мероприятия, которые живут в памяти годами. За 8 лет работы я организовала более 200 событий — от камерных ужинов до масштабных корпоративных вечеров.
+                Привет! Я Наталья Алексашкина — профессиональный ведущий и тамада из Сарова. Уже более 10 лет я создаю праздники, на которых гости не просто присутствуют, а живут каждым моментом.
               </p>
               <p className="text-champagne/60 leading-relaxed mb-8 text-sm tracking-wide">
-                Мой подход — это полное погружение в ваш проект. Я беру на себя всё: концепцию, поиск площадки, работу с подрядчиками, тайминг и присутствие в день события. Вы просто наслаждаетесь.
+                Каждое мероприятие — это авторский сценарий, написанный специально для вас. Я учитываю характер, возраст и интересы гостей, чтобы никто не скучал. Свадьбы, юбилеи, корпоративы, выпускные — берусь за любой формат и делаю его особенным.
               </p>
               <div className="grid grid-cols-3 gap-6">
-                {[["200+", "Мероприятий"], ["98%", "Довольных клиентов"], ["15+", "Городов"]].map(([num, label]) => (
+                {[["300+", "Мероприятий"], ["10+", "Лет опыта"], ["100%", "Довольных клиентов"]].map(([num, label]) => (
                   <div key={label} className="border-l border-gold/30 pl-4">
                     <div className="font-cormorant text-3xl text-gold font-light">{num}</div>
                     <div className="text-xs text-champagne/40 tracking-wider uppercase mt-1">{label}</div>
@@ -383,12 +390,12 @@ export default function Index() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="font-cormorant text-2xl text-gold tracking-[0.2em] uppercase">Наталья</div>
           <div className="text-xs text-champagne/20 tracking-widest">
-            © 2024 · Организатор мероприятий · Москва
+            © 2025 · Наталья Алексашкина · Саров
           </div>
           <div className="flex gap-6 text-xs tracking-widest uppercase text-champagne/30">
-            <span>Premium Events</span>
+            <span>Тамада & Ведущая</span>
             <span className="text-gold/30">✦</span>
-            <span>Since 2016</span>
+            <span>Since 2014</span>
           </div>
         </div>
       </footer>
